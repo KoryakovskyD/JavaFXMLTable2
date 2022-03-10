@@ -16,6 +16,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafxmltable2.AddCar;
+import javafxmltable2.DbServer;
 import model.Car;
 
 
@@ -36,9 +38,8 @@ public class FXMLDocumentController implements Initializable {
 
     
     @FXML
-    private void handleButton1Action(ActionEvent event) {
-        Car car = new Car(11, "Linman");
-        addPerson(car);
+    private void handleButton3Action(ActionEvent event) {
+        updateTable(getPersonList());
     }
 
     @FXML
@@ -54,7 +55,12 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @FXML
-    public void handleButton3Action(ActionEvent actionEvent) {
+    public void handleButton1Action(ActionEvent actionEvent) {
+        try {
+            new AddCar().start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -68,26 +74,15 @@ public class FXMLDocumentController implements Initializable {
         table.setItems(list);
     }
     
-    private ObservableList<Car> getPersonList (){
-        ArrayList<Car> arrayList = new ArrayList<>();
-        arrayList.add(new Car (1, "Simpole"));
-        arrayList.add(new Car (2, "Shortt"));
-        arrayList.add(new Car (3, "Hambright"));
-        arrayList.add(new Car (4, "Reubel"));
-        arrayList.add(new Car (5, "Hazleton"));
-        arrayList.add(new Car (6, "Ferrie"));
-        arrayList.add(new Car (7, "Bobasch"));
-        
-        return FXCollections.observableArrayList(arrayList);
-    }
-    
-    private void addPerson (Car p){
-        List<Car> list = table.getItems().subList(0, table.getItems().size());
-        list.add(p);
-        updateTable(FXCollections.observableArrayList(list));
-    }
 
 
+    private ObservableList<Car> getPersonList() {
+
+        DbServer dbServer = new DbServer("jdbc:derby://localhost:1527/j140", "j140", "j140");
+        dbServer.start();
+
+        return FXCollections.observableArrayList(dbServer.getCars());
+    }
 
 
 }

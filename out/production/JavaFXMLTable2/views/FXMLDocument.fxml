@@ -20,7 +20,7 @@
         <HBox id="VBox" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1">
             <Button text="Add new car" onAction="#handleButton1Action" fx:id="button1" />
             <Button text="Change CSS" onAction="#handleButton2Action" fx:id="button2" />
-            <Button text="Delete car" onAction="#handleButton3Action" fx:id="button3" />
+            <Button text="Rebase" onAction="#handleButton3Action" fx:id="button3" />
         </HBox>
     </children>
 </VBox>
