@@ -4,8 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import javafxmltable2.DbServer;
@@ -18,17 +16,11 @@ public class FXMLAddNewCarController implements Initializable {
     @FXML
     TextArea textArea;
     @FXML
-    private TableView table;
-    @FXML
-    TableColumn numCol;
-    @FXML
-    TableColumn modelCol;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
 
     public void handleButtonAction(ActionEvent actionEvent) {
 

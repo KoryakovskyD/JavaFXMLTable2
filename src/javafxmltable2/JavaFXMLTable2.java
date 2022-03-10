@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javafxmltable2;
 
 import javafx.application.Application;
@@ -12,10 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
-/**
- *
- * @author denis
- */
 public class JavaFXMLTable2 extends Application {
     
     @Override
@@ -23,16 +14,11 @@ public class JavaFXMLTable2 extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/views/FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
-        FlowPane flowPane = new FlowPane();
         stage.setScene(scene);
         stage.show();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }
-    
 }

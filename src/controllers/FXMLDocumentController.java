@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controllers;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,10 +15,6 @@ import javafxmltable2.DbServer;
 import model.Car;
 
 
-/**
- *
- * @author denis
- */
 public class FXMLDocumentController implements Initializable {
 
     boolean changeCSS= true;
@@ -73,14 +63,10 @@ public class FXMLDocumentController implements Initializable {
         modelCol.setCellValueFactory(new PropertyValueFactory<>("model"));
         table.setItems(list);
     }
-    
-
 
     private ObservableList<Car> getPersonList() {
-
         DbServer dbServer = new DbServer("jdbc:derby://localhost:1527/j140", "j140", "j140");
         dbServer.start();
-
         return FXCollections.observableArrayList(dbServer.getCars());
     }
 
