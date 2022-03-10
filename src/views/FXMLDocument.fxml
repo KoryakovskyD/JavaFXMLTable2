@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox id="VBox" prefHeight="500" prefWidth="800" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" text="DB Viewer" />
+
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn text="№" fx:id="numCol" />
+                <TableColumn text="Model" fx:id="modelCol" />
+            </columns>
+        </TableView>
+
+        <HBox id="VBox" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1">
+            <Button text="Add new car" onAction="#handleButton1Action" fx:id="button1" />
+            <Button text="Change CSS" onAction="#handleButton2Action" fx:id="button2" />
+            <Button text="Delete car" onAction="#handleButton3Action" fx:id="button3" />
+        </HBox>
+    </children>
+</VBox>
